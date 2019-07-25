@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BitLauncher</string>
+    <string name="title_activity_app_chooser">AppChooserActivity</string>
+</resources>
