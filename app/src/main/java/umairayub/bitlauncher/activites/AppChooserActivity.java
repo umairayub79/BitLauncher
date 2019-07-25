@@ -25,6 +25,8 @@ import spencerstudios.com.jetdblib.JetDB;
 import umairayub.bitlauncher.R;
 import umairayub.bitlauncher.adapters.Adapter;
 import umairayub.bitlauncher.model.App;
+import umairayub.madialog.MaDialog;
+import umairayub.madialog.MaDialogListener;
 
 //this is a one time activity to select apps for home screen
 //this activity can be launched from settings again if needed
@@ -60,6 +62,18 @@ public class AppChooserActivity extends AppCompatActivity {
                     JetDB.putListOfObjects(context, SelectedApps, "apps");
                     //Finishing this activity
                     finish();
+                } else {
+                    new MaDialog.Builder(context)
+                            .setTitle("Oops!")
+                            .setMessage("You can't leave without selecting any apps")
+                            .setPositiveButtonText("Ok, Let me select some apps")
+                            .setPositiveButtonListener(new MaDialogListener() {
+                                @Override
+                                public void onClick() {
+
+                                }
+                            })
+                            .build();
                 }
             }
         });
@@ -111,9 +125,18 @@ public class AppChooserActivity extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
 
                     // showing a dialog if user tries to selected more than 5 apps
-                } else if (SelectedApps.size() >= 5) {
-                    //Dialog goes here
-//                    Toast.makeText(context, "You can't select more than 5 Apps", Toast.LENGTH_SHORT).show();
+                } else {
+                    new MaDialog.Builder(context)
+                            .setTitle("Oops")
+                            .setMessage("You can't select more then 5 apps")
+                            .setPositiveButtonText("Oh, Okay")
+                            .setPositiveButtonListener(new MaDialogListener() {
+                                @Override
+                                public void onClick() {
+
+                                }
+                            })
+                            .build();
                 }
 
 

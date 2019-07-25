@@ -6,8 +6,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.List;
+
 import spencerstudios.com.jetdblib.JetDB;
 import umairayub.bitlauncher.R;
 import umairayub.bitlauncher.adapters.Adapter;
@@ -60,5 +63,10 @@ public class MainActivity extends AppCompatActivity {
         // if HomeAppList is not empty  created a adapter and show the  app list
         Adapter adapter = new Adapter(context, HomeAppList);
         listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do nothing
     }
 }
