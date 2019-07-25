@@ -3,6 +3,7 @@ package umairayub.bitlauncher.activites;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -95,8 +96,12 @@ public class AppChooserActivity extends AppCompatActivity {
                     //Making a Chip
                     final Chip chip = new Chip(context);
                     chip.setText(AppName);
-                    chip.setCloseIconResource(R.drawable.ic_action_name);
+                    chip.setCloseIconResource(R.drawable.ic_clear);
                     chip.setCloseIconEnabled(true);
+                    chip.setCloseIconTintResource(R.color.colorWhite);
+                    chip.setPadding(2, 2, 2, 2);
+                    chip.setTextColor(Color.WHITE);
+                    chip.setChipBackgroundColorResource(R.color.colorAccent);
                     chip.setOnCloseIconClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {

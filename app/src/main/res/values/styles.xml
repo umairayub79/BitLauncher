@@ -3,10 +3,12 @@
 
     <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
 
     </style>
 
     <style name="AppThemeLight" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
         <!-- Customize your theme here. -->
 
     </style>
