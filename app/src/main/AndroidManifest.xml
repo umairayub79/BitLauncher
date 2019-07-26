@@ -10,11 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activites.AppChooserActivity"
-            android:label="@string/title_activity_app_chooser"
-            android:theme="@style/AppTheme">
-
+            android:name=".activites.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".activites.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="umairayub.bitlauncher.activites.MainActivity" />
         </activity>
+        <activity
+            android:name=".activites.AppChooserActivity"
+            android:label="@string/title_activity_app_chooser" />
         <activity
             android:name=".activites.MainActivity"
             android:launchMode="singleTask">
