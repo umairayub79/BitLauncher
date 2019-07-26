@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,16 +24,49 @@ public class MainActivity extends AppCompatActivity {
     List<App> HomeAppList;
     MainActivity context = MainActivity.this;
 
-
+    Boolean theme;
+    Boolean status_bar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        status_bar = JetDB.getBoolean(context, "status", false);
+        theme = JetDB.getBoolean(context, "theme", false);
+
+        if (status_bar) {
+            if (theme) {
+                setTheme(R.style.AppThemeDarkFullScreen);
+                Toast.makeText(context, "FullScreen Dark", Toast.LENGTH_SHORT).show();
+            } else {
+                setTheme(R.style.AppThemeFullScreen);
+                Toast.makeText(context, "FullScreen Light", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            if (theme) {
+                setTheme(R.style.AppThemeDark);
+                Toast.makeText(context, " Dark", Toast.LENGTH_SHORT).show();
+            } else {
+                setTheme(R.style.AppTheme);
+                Toast.makeText(context, " Light", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-        tvSettings = (TextView) findViewById(R.id.tvSettings);
-        listView = (ListView) findViewById(R.id.listview);
+        tvSettings = findViewById(R.id.tvSettings);
+        listView = findViewById(R.id.listview);
 
 
+        tvSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, SettingsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -53,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
         //Getting the List of user selected apps from SharedPrefs using JetDB
         HomeAppList = JetDB.getListOfObjects(context, App.class, "apps");
         //checking if HomeAppList is empty then launching the app chooser activity
@@ -63,10 +98,13 @@ public class MainActivity extends AppCompatActivity {
         // if HomeAppList is not empty  created a adapter and show the  app list
         Adapter adapter = new Adapter(context, HomeAppList);
         listView.setAdapter(adapter);
+
     }
 
     @Override
     public void onBackPressed() {
         // Do nothing
     }
+
+
 }

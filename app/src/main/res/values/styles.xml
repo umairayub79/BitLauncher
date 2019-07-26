@@ -1,18 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppThemeDark" parent="Theme.MaterialComponents.NoActionBar">
         <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTranssition</item>
 
     </style>
 
-    <style name="AppThemeLight" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
-        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTranssition</item>
 
     </style>
 
+    <style name="AppThemeDarkFullScreen" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTranssition</item>
+
+
+    </style>
+
+    <style name="AppThemeFullScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTranssition</item>
+
+    </style>
+
+    <style name="WindowAnimationTranssition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
 
 
 </resources>

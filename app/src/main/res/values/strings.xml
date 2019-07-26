@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">BitLauncher</string>
     <string name="title_activity_app_chooser">AppChooserActivity</string>
+    <string name="title_activity_settings">Settings</string>
+
+
+    <string name="theme_title">Theme</string>
+    <string name="theme_summary_on">Dark Theme
+    </string>
+    <string name="theme_summary_off">Light Theme</string>
+
+    <string name="status_title">Status Bar </string>
+    <string name="status_summary_on">Hide Status bar
+    </string>
+    <string name="status_summary_off">Show Status bar</string>
 </resources>

@@ -6,10 +6,12 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,9 +44,31 @@ public class AppChooserActivity extends AppCompatActivity {
     ArrayList<App> SelectedApps = new ArrayList<>();
     AppChooserActivity context = AppChooserActivity.this;
     ChipGroup mChipsGroup;
+    Boolean status_bar;
+    Boolean theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        status_bar = JetDB.getBoolean(context, "status", false);
+        theme = JetDB.getBoolean(context, "theme", false);
+
+        if (status_bar) {
+            if (theme) {
+                setTheme(R.style.AppThemeDarkFullScreen);
+                Toast.makeText(context, "FullScreen Dark", Toast.LENGTH_SHORT).show();
+            } else {
+                setTheme(R.style.AppThemeFullScreen);
+                Toast.makeText(context, "FullScreen Light", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            if (theme) {
+                setTheme(R.style.AppThemeDark);
+                Toast.makeText(context, " Dark", Toast.LENGTH_SHORT).show();
+            } else {
+                setTheme(R.style.AppTheme);
+                Toast.makeText(context, " Light", Toast.LENGTH_SHORT).show();
+            }
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_chooser);
 
@@ -85,7 +109,7 @@ public class AppChooserActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // getting the app's name from apps array of object at position i
                 String AppName = apps.get(i).Appname;
-
+                Log.i("Settings", apps.get(i).packageName);
                 //Making sure users select 5 apps Only
                 if (SelectedApps.size() < 5) {
                     //Making a app object
