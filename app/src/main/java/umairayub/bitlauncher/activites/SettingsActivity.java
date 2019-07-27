@@ -128,12 +128,6 @@ public class SettingsActivity extends AppCompatActivity {
                     @Override
                     public boolean onPreferenceClick(Preference preference) {
 
-//                        Intent fback = new Intent(Intent.ACTION_SEND);
-//                        fback.setType("text/email");
-//                        fback.putExtra(Intent.EXTRA_EMAIL, "arsalanbal3@gmail.com");
-//                        fback.putExtra(Intent.EXTRA_SUBJECT,"BitLauncher FeedBack");
-//                        fback.putExtra(Intent.EXTRA_TEXT,"Write your FeedBack Here");
-//                        startActivity(Intent.createChooser(fback,"Send FeedBack!"));
                         Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                         emailIntent.setData(Uri.parse("mailto:umairayub79@gmail.com"));
                         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "BitLauncher Feedback");
@@ -145,7 +139,6 @@ public class SettingsActivity extends AppCompatActivity {
             }
 
         }
-
 
     }
 }

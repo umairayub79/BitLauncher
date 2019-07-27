@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     List<App> HomeAppList;
     MainActivity context = MainActivity.this;
-
     Boolean theme;
     Boolean status_bar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -50,9 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         tvSettings = findViewById(R.id.tvSettings);
@@ -79,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                     //launching the activity if intent is not null
                     startActivity(intent);
                 }
-
             }
         });
     }

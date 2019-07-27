@@ -194,7 +194,6 @@ public class AppChooserActivity extends AppCompatActivity {
             List<ApplicationInfo> applications = getPackageManager().getInstalledApplications(0);
             for (ApplicationInfo application : applications) {
                 if (packageManager.getLaunchIntentForPackage(application.packageName) != null) {
-
                     //Skipping Bit Launcher from apps list
                     if (application.packageName.equals("umairayub.bitlauncher")) {
                         continue;
@@ -204,7 +203,6 @@ public class AppChooserActivity extends AppCompatActivity {
                     app.Appname = application.loadLabel(packageManager).toString();
                     app.packageName = application.packageName;
                     apps.add(app);
-
 
                 }
             }
