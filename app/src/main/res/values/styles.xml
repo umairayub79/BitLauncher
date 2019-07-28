@@ -1,34 +1,38 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppThemeDark" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTranssition</item>
-        <item name="android:colorPrimaryDark" tools:targetApi="lollipop">#282C2E</item>
+        <item name="colorPrimaryDark" tools:targetApi="lollipop">#414246</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
 
     </style>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
+        <item name="colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTranssition</item>
-        <item name="android:colorPrimaryDark" tools:targetApi="lollipop">#ECECEC</item>
+        <item name="colorPrimaryDark" tools:targetApi="lollipop">#ECECEC</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
 
     </style>
 
     <style name="AppThemeDarkFullScreen" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
+        <item name="colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTranssition</item>
     </style>
 
     <style name="AppThemeFullScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
+        <item name="colorAccent" tools:ignore="NewApi">@color/colorAccent</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTranssition</item>
     </style>
 
+    <style name="btnTheme" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@color/colorAccent</item>
+    </style>
     <style name="WindowAnimationTranssition">
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>

@@ -45,6 +45,10 @@
         app:title="Open App Chooser" />
     <Preference
         app:iconSpaceReserved="false"
+        app:key="rate_us"
+        app:title="Rate Bit Launcher" />
+    <Preference
+        app:iconSpaceReserved="false"
         app:key="feedback"
         app:title="FeedBack" />
 

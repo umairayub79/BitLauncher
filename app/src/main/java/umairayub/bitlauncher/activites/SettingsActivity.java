@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -13,6 +14,8 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import spencerstudios.com.jetdblib.JetDB;
 import umairayub.bitlauncher.R;
+import umairayub.madialog.MaDialog;
+import umairayub.madialog.MaDialogListener;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -118,6 +121,41 @@ public class SettingsActivity extends AppCompatActivity {
                     public boolean onPreferenceClick(Preference preference) {
                         Intent intent = new Intent(getContext(), AppChooserActivity.class);
                         startActivity(intent);
+                        return true;
+                    }
+                });
+            }
+            Preference Rate_us = findPreference("rate_us");
+            if (Rate_us != null) {
+                Rate_us.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        new MaDialog.Builder(getContext())
+                                .setImage(R.drawable.rating)
+                                .setBackgroundColor(R.color.colorWhite)
+                                .setTitleTextColor(R.color.colorBlack)
+                                .setMessageTextColor(R.color.colorBlack)
+                                .setTitle("Rate BitLauncher")
+                                .setMessage("Tell others what you think about this app")
+                                .setButtonOrientation(LinearLayout.VERTICAL)
+                                .AddNewButton(R.style.btnTheme, "Sure", new MaDialogListener() {
+                                    @Override
+                                    public void onClick() {
+                                        try {
+                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getContext().getPackageName())));
+                                        } catch (android.content.ActivityNotFoundException e) {
+                                            e.printStackTrace();
+                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getContext().getPackageName())));
+                                        }
+                                    }
+                                })
+                                .AddNewButton(R.style.btnTheme, "I don't want to", new MaDialogListener() {
+                                    @Override
+                                    public void onClick() {
+
+                                    }
+                                })
+                                .build();
                         return true;
                     }
                 });
