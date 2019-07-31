@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,18 +30,14 @@ public class SettingsActivity extends AppCompatActivity {
         if (status_bar) {
             if (theme) {
                 setTheme(R.style.AppThemeDarkFullScreen);
-                Toast.makeText(context, "FullScreen Dark", Toast.LENGTH_SHORT).show();
             } else {
                 setTheme(R.style.AppThemeFullScreen);
-                Toast.makeText(context, "FullScreen Light", Toast.LENGTH_SHORT).show();
             }
         } else {
             if (theme) {
                 setTheme(R.style.AppThemeDark);
-                Toast.makeText(context, " Dark", Toast.LENGTH_SHORT).show();
             } else {
                 setTheme(R.style.AppTheme);
-                Toast.makeText(context, " Light", Toast.LENGTH_SHORT).show();
             }
         }
         super.onCreate(savedInstanceState);

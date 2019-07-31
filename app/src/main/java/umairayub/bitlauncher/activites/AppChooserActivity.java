@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -55,18 +54,14 @@ public class AppChooserActivity extends AppCompatActivity {
         if (status_bar) {
             if (theme) {
                 setTheme(R.style.AppThemeDarkFullScreen);
-                Toast.makeText(context, "FullScreen Dark", Toast.LENGTH_SHORT).show();
             } else {
                 setTheme(R.style.AppThemeFullScreen);
-                Toast.makeText(context, "FullScreen Light", Toast.LENGTH_SHORT).show();
             }
         } else {
             if (theme) {
                 setTheme(R.style.AppThemeDark);
-                Toast.makeText(context, " Dark", Toast.LENGTH_SHORT).show();
             } else {
                 setTheme(R.style.AppTheme);
-                Toast.makeText(context, " Light", Toast.LENGTH_SHORT).show();
             }
         }
         super.onCreate(savedInstanceState);
