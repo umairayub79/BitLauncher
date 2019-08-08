@@ -2,6 +2,11 @@
 Minimalist launcher for Android
 
 
+## Screenshots
+![Example screenshot 1](./screenshots/screenshot01.png)
+![Example screenshot 2](./screenshots/screenshot02.png)
+![Example screenshot 3](./screenshots/screenshot03.png)
+
 # Description
 ```
 
