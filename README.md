@@ -2,8 +2,33 @@
 Minimalist launcher for Android
 
 
-#BitLauncher 
-is designed with minimalism in mind
+# Description
+```
+
+✶ Made with minimalism in mind.✶
+✶ Stay focused using the Bitlauncher.✶
+✶ Bit Launcher helps you use your Phone less and live in the moment✶
+
+Minimal homescreen
+Focus on your five most important apps.
+
+Notified but not distracted
+Focus on what is essential. Your important notifications work normally, so you don’t miss anything.
+
+Truly private
+We are not in the business of capturing or selling your data. We don't track any personally identifiable data -- we even allow you to turn off our anonymous analytics.
+
+Save your battery
+Use our true black background to significantly preserve your battery (if your phone has an AMOLED screen).
+
+
+Easy set up
+Our guided process helps you get BitLauncher set up in no time.
+
+We respect your privacy. We don't track personally identifiable data and allow for several ways to make your experience even more private.
+```
+
+
 
 
 # License
