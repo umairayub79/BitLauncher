@@ -4,8 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:textSize="22sp"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
+        android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv_item"/>

@@ -8,9 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.jaredrummler.cyanea.app.CyaneaAppCompatActivity;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ import umairayub.bitlauncher.adapters.Adapter;
 import umairayub.bitlauncher.listeners.OnSwipeTouchListener;
 import umairayub.bitlauncher.model.App;
 
-public class MainActivity extends CyaneaAppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     TextView tvSettings;
     ListView listView;
