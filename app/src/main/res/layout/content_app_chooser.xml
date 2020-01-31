@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Select 5 apps for home screen to continue"
+                android:text="Select 7 apps for home screen to continue"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 

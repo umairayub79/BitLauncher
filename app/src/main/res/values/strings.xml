@@ -13,4 +13,8 @@
     <string name="status_summary_on">Hide Status bar
     </string>
     <string name="status_summary_off">Show Status bar</string>
+
+    <string name="title_activity_app_drawer">AppDrawerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

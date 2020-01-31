@@ -105,8 +105,8 @@ public class AppChooserActivity extends AppCompatActivity {
                 // getting the app's name from apps array of object at position i
                 String AppName = apps.get(i).Appname;
                 Log.i("Settings", apps.get(i).packageName);
-                //Making sure users select 5 apps Only
-                if (SelectedApps.size() < 5) {
+                //Making sure users select 7 apps Only
+                if (SelectedApps.size() < 7) {
                     //Making a app object
                     final App app = apps.get(i);
                     //adding the app object in SelectedApps Array
@@ -148,11 +148,11 @@ public class AppChooserActivity extends AppCompatActivity {
                     apps.remove(i);
                     adapter.notifyDataSetChanged();
 
-                    // showing a dialog if user tries to selected more than 5 apps
+                    // showing a dialog if user tries to selected more than 7 apps
                 } else {
                     new MaDialog.Builder(context)
                             .setTitle("Oops")
-                            .setMessage("You can't select more then 5 apps")
+                            .setMessage("You can't select more then 7 apps")
                             .setPositiveButtonText("Oh, Okay")
                             .setPositiveButtonListener(new MaDialogListener() {
                                 @Override
