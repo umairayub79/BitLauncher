@@ -40,7 +40,7 @@ public class AppChooserActivity extends AppCompatActivity {
     ProgressBar progressBar;
     Adapter adapter;
     ArrayList<App> apps = new ArrayList<>();
-    ArrayList<App> SelectedApps = new ArrayList<>();
+    List<App> SelectedApps = new ArrayList<>();
     AppChooserActivity context = AppChooserActivity.this;
     ChipGroup mChipsGroup;
     Boolean status_bar;
@@ -217,6 +217,33 @@ public class AppChooserActivity extends AppCompatActivity {
             });
             Listview.setAdapter(adapter);
 
+            SelectedApps =  JetDB.getListOfObjects(context, App.class, "apps");
+            if (!SelectedApps.isEmpty()){
+                for (int i = 0; i < SelectedApps.size(); i++){
+                    final App app = SelectedApps.get(i);
+                    //Making a Chip
+                    final Chip chip = new Chip(context);
+                    chip.setText(app.Appname);
+                    chip.setCloseIconResource(R.drawable.ic_clear);
+                    chip.setCloseIconEnabled(true);
+                    chip.setCloseIconTintResource(R.color.colorWhite);
+                    chip.setPadding(2, 2, 2, 2);
+                    chip.setTextColor(Color.WHITE);
+                    chip.setChipBackgroundColorResource(R.color.colorAccent);
+                    chip.setOnCloseIconClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            // removing the chip
+                            mChipsGroup.removeView(chip);
+                            // removing the app from Arraylist
+                            SelectedApps.remove(app);
+                        }
+                    });
+                    // adding chip to chipsGroup
+                    mChipsGroup.addView(chip);
+
+                }
+            }
             super.onPostExecute(items);
         }
     }

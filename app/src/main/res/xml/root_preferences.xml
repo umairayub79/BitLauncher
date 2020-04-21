@@ -34,11 +34,11 @@
     <Preference
         app:iconSpaceReserved="false"
         app:key="sysSettings"
-        app:title="Open System Settings" />
+        app:title="System Settings" />
     <Preference
         app:iconSpaceReserved="false"
         app:key="launcherSettings"
-        app:title="Open Launcher Settings" />
+        app:title="Change Home App" />
     <Preference
         app:iconSpaceReserved="false"
         app:key="appchooser"
